@@ -2,6 +2,18 @@
 
 All notable changes to `sandermuller/solana-pubkey` will be documented in this file.
 
+## v0.1.1 - 2026-05-11
+
+### Fixed
+
+- **CI / packaging:** `update-changelog` workflow now pins checkout + commit-back to `main`. Previously, releases cut with `gh release create --target $SHA` would set `target_commitish` to a raw SHA, breaking the commit-back step. Future releases auto-prepend their notes to `CHANGELOG.md`.
+
+### Added
+
+- `CHANGELOG.md` — seeded with v0.1.0 entry so the changelog-updater action has a file to prepend to.
+
+No source-level changes. Library API and runtime behavior identical to v0.1.0.
+
 ## v0.1.0 - 2026-05-11
 
 Initial release.
