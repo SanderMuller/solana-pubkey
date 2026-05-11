@@ -1,0 +1,36 @@
+name: lean-package
+
+permissions:
+  contents: read
+
+on:
+  push:
+  pull_request:
+    paths:
+      - '.gitattributes'
+      - '.lpv'
+      - 'composer.json'
+      - '.github/workflows/lean-package.yml'
+
+jobs:
+  validate:
+    name: validate dist
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v4
+
+      - name: Validate .gitattributes
+        run: vendor/bin/lean-package-validator validate
+
+      - name: Validate Git archive contents
+        run: vendor/bin/lean-package-validator validate --validate-git-archive

@@ -1,0 +1,28 @@
+# Dependencies
+/vendor
+auth.json
+
+# Caches
+.cache
+/build
+
+# IDE Helper
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# Editors
+/.idea
+/.fleet
+/.vscode
+
+# Misc
+phpunit.xml
+phpstan.neon
+/coverage
+composer.lock
+.phpunit.result.cache
+
+RELEASE_NOTES*.md
+
+.claude/scheduled_tasks.lock

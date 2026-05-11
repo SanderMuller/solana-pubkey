@@ -1,0 +1,70 @@
+{
+  "name": "sandermuller/solana-pubkey",
+  "description": "Tiny, framework-agnostic PHP library for Solana public keys and Ed25519 signature verification.",
+  "license": "MIT",
+  "keywords": ["solana", "ed25519", "pubkey", "base58", "siws", "signature"],
+  "authors": [
+    {
+      "name": "Sander Muller",
+      "email": "github@scode.nl"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "ext-sodium": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.29",
+    "mrpunyapal/rector-pest": "^0.2.7",
+    "nikic/php-parser": "^5.4",
+    "orchestra/testbench": "^9.0||^10.11||^11.0",
+    "pestphp/pest": "^3.0||^4.4",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0",
+    "rector/rector": "^2.4.1",
+    "rector/type-perfect": "^2.0",
+    "sandermuller/package-boost": "^0.15.0",
+    "spaze/phpstan-disallowed-calls": "^4.10",
+    "stolt/lean-package-validator": "^5.7.1",
+    "symplify/phpstan-extensions": "^12.0",
+    "tomasvotruba/cognitive-complexity": "^1.0",
+    "tomasvotruba/type-coverage": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SanderMuller\\SolanaPubkey\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SanderMuller\\SolanaPubkey\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan analyse --memory-limit=2G",
+    "phpstan-simplified": "vendor/bin/phpstan analyse --memory-limit=2G --error-format symplify",
+    "phpstan-clear-cache": "vendor/bin/phpstan clear-result-cache",
+    "format": "vendor/bin/pint",
+    "rector": "vendor/bin/rector process",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "sync-ai": "vendor/bin/testbench package-boost:sync",
+    "validate-gitattributes": "vendor/bin/lean-package-validator validate",
+    "qa": [
+      "@rector",
+      "@format",
+      "@phpstan-simplified",
+      "@validate-gitattributes",
+      "@test"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  }
+}
