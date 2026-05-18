@@ -1,7 +1,10 @@
 # solana-pubkey
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sandermuller/solana-pubkey.svg?style=flat-square)](https://packagist.org/packages/sandermuller/solana-pubkey)
 [![run-tests](https://github.com/sandermuller/solana-pubkey/actions/workflows/run-tests.yml/badge.svg)](https://github.com/sandermuller/solana-pubkey/actions/workflows/run-tests.yml)
 [![PHPStan](https://github.com/sandermuller/solana-pubkey/actions/workflows/phpstan.yml/badge.svg)](https://github.com/sandermuller/solana-pubkey/actions/workflows/phpstan.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/sandermuller/solana-pubkey.svg?style=flat-square)](https://packagist.org/packages/sandermuller/solana-pubkey)
+[![License](https://img.shields.io/packagist/l/sandermuller/solana-pubkey.svg?style=flat-square)](LICENSE)
 
 Tiny, framework-agnostic PHP library for Solana public keys and Ed25519 signature verification.
 
